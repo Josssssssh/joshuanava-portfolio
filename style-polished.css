@@ -1,0 +1,320 @@
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===================================
+   ROOT COLORS
+=================================== */
+:root{
+    --bg: #0b1120;
+    --card: #172033;
+    --accent: #6366f1;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+}
+
+/* ===================================
+   GLOBAL SETTINGS
+=================================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ===================================
+   HEADER / NAVBAR
+=================================== */
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(11, 17, 32, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    transition: 0.3s ease;
+}
+
+.logo img:hover{
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(99,102,241,.5);
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 22px;
+    transition: 0.3s ease;
+}
+
+nav a:hover{
+    color: var(--accent);
+}
+
+/* ===================================
+   GENERAL SECTION SETTINGS
+=================================== */
+section{
+    padding: 110px 8%;
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+.hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-image img{
+    width: 380px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(99, 102, 241, 0.25);
+}
+
+.hero h1{
+    font-size: 4.8rem;
+}
+
+.hero h2{
+    font-size: 2.6rem;
+    margin: 10px 0;
+}
+
+.hero .intro{
+    max-width: 650px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* Status Tag */
+.tag{
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--accent);
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin-bottom: 15px;
+}
+
+/* Typing Effect Text */
+.typing{
+    color: var(--accent);
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+.btn{
+    display: inline-block;
+    padding: 12px 22px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-right: 10px;
+    transition: 0.3s ease;
+}
+
+.btn-outline{
+    background: transparent;
+    border: 2px solid var(--accent);
+}
+
+/* ===================================
+   SOCIAL ICONS
+=================================== */
+.socials{
+    margin-top: 20px;
+}
+
+.socials a{
+    color: var(--accent);
+    font-size: 1.6rem;
+    margin-right: 12px;
+}
+
+/* ===================================
+   SECTION TITLES
+=================================== */
+.title{
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+/* ===================================
+   CARDS
+=================================== */
+.card,
+.project-card,
+.contact-form{
+    background: var(--card);
+    padding: 24px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.card{
+    text-align: center;
+}
+
+.card i{
+    font-size: 6rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+/* ===================================
+   GRID LAYOUTS
+=================================== */
+.grid,
+.projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+
+/* ==========================
+   SKILLS LOGO CAROUSEL
+========================== */
+
+.skills-slider{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.skills-track{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    width: max-content;
+    animation: scrollSkills 20s linear infinite;
+}
+
+.skills-track img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: .3s ease;
+  
+}
+
+.skills-track img:hover{
+    transform: scale(1.15);
+    filter: grayscale(0%);
+}
+
+@keyframes scrollSkills{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
+
+/* ===================================
+   PROJECT CARDS
+=================================== */
+.project-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: #0f172a;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.project-card small{
+    color: var(--accent);
+}
+
+/* ===================================
+   CONTACT FORM
+=================================== */
+/* Contact Section */
+
+.contact-card{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-item{
+    width: 120px;
+    height: 120px;
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+   
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: var(--text);
+
+    transition: .3s ease;
+}
+
+.contact-item i{
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.contact-item span{
+    font-size: 1.4rem;
+}
+
+.contact-item:hover{
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px rgba(99,102,241,.2);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+=================================== */
+@media (max-width: 900px){
+
+    .hero{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image img{
+        width: 280px;
+    }
+}
